@@ -1,19 +1,31 @@
 {
-  "name": "backend",
+  "name": "zms",
   "version": "1.0.0",
-  "description": "",
+  "description": "This document outlines the MongoDB database schema for the Zoo Management System. The schema is designed using Mongoose to be relational, scalable, and secure, with clear links between different data collections.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ashwani1621/zms.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ashwani1621/zms/issues"
+  },
+  "homepage": "https://github.com/Ashwani1621/zms#readme",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "mongoose": "^8.17.2"
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.17.2",
+    "multer": "^2.0.2",
+    "zod": "^4.0.17"
   }
 }
