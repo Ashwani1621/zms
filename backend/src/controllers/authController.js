@@ -12,6 +12,30 @@ exports.seedAdmin = asyncHandler(async (req, res) => {
   res.status(201).json({ message: 'Admin created', user: { id: user._id, email: user.email } });
 });
 
+exports.signup = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body;
+  
+  // Check if user already exists
+  const existingUser = await User.findOne({ email });
+  if (existingUser) {
+    return res.status(400).json({ message: 'User already exists with this email' });
+  }
+
+  // Create new user (for demo, using plain text password - in production, use bcrypt)
+  const user = await User.create({ 
+    name, 
+    email, 
+    passwordHash: password, 
+    role: 'staff' // default role for new signups
+  });
+
+  const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '2d' });
+  res.status(201).json({ 
+    token, 
+    user: { id: user._id, name: user.name, email: user.email, role: user.role } 
+  });
+});
+
 exports.login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
   const u = await User.findOne({ email });

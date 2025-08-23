@@ -4,6 +4,7 @@ import "./globals.css";
 import { NavbarDemo } from "@/components/navbar";
 import { Footer } from "@/components/navbar/footer";
 import { StickyBannerDemo } from "@/components/stickyBanner/banner";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,10 +31,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StickyBannerDemo/>
-        <NavbarDemo />
-        {children}
-        <Footer />
+        <Providers>
+          <StickyBannerDemo/>
+          <NavbarDemo />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
