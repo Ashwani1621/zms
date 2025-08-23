@@ -47,7 +47,9 @@ export function NavbarAdminDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
+
             <LogoutButton />
+
             <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>Book a Ticket</NavbarButton>
           </div>
         </NavBody>
@@ -77,7 +79,9 @@ export function NavbarAdminDemo() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+
               <LogoutButton />
+
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"

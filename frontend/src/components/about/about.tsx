@@ -53,7 +53,7 @@ const dummyContent = [
     ),
     badge: "History",
     image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/zoo_animate.jpg",
   },
   {
     title: "Attractions Within the Zoo",
@@ -74,7 +74,7 @@ const dummyContent = [
     ),
     badge: "Zoo Attractions",
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80&w=3540",
+      "/attract.jpg",
   },
   {
     title: "Our Mission & Vision",
@@ -91,6 +91,6 @@ const dummyContent = [
     ),
     badge: "Vison & Mission",
     image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/future.jpg",
   },
 ];
