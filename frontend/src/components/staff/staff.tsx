@@ -207,7 +207,7 @@ const cards = [
   {
     description: "Businessman",
     title: "Donald Trump",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/donald_trump.jpg",
     ctaText: "Hire",
     ctaLink: "https://www.youtube.com/shorts/SXHMnicI6Pg",
     content: () => {
@@ -221,7 +221,7 @@ const cards = [
   {
     description: "Gardener",
     title: "Elon Musk",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    src: "/elon_musk.jpg",
     ctaText: "Hire",
     ctaLink: "https://www.youtube.com/shorts/SXHMnicI6Pg",
     content: () => {
@@ -236,7 +236,7 @@ const cards = [
   {
   description: "Veterinarian",
   title: "Jane Goodall",
-  src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+  src: "/jane_goodall.jpg",
   ctaText: "Hire",
   ctaLink: "https://www.youtube.com/shorts/SXHMnicI6Pg",
   content: () => (
@@ -248,7 +248,7 @@ const cards = [
   {
   description: "Marketing Director",
   title: "Gary Vaynerchuk",
-  src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+  src: "/gary_vaynerchuk.jpg",
   ctaText: "Hire",
   ctaLink: "https://www.youtube.com/shorts/SXHMnicI6Pg",
   content: () => (
@@ -260,7 +260,7 @@ const cards = [
 {
   description: "Architect",
   title: "Zaha Hadid",
-  src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+  src: "/zara_hadid.jpg",
   ctaText: "Hire",
   ctaLink: "https://www.youtube.com/shorts/SXHMnicI6Pg",
   content: () => (

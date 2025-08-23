@@ -46,7 +46,7 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" onClick={() => window.location.href = "/signup"} className="text-blue-600">Login</NavbarButton>
+            <NavbarButton variant="secondary" onClick={() => window.location.href = "/signin"} className="text-blue-600">Login</NavbarButton>
             <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>Book a Ticket</NavbarButton>
           </div>
         </NavBody>
@@ -79,7 +79,7 @@ export function NavbarDemo() {
               <NavbarButton
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  window.location.href = "/signup";
+                  window.location.href = "/signin";
                 }}
                 variant="primary"
                 className="w-full"
