@@ -28,7 +28,7 @@ export function NavbarDemo() {
     },
     {
       name: "Map",
-      link: "#Map",
+      link: "/#map",
     },
     {
       name: "About",

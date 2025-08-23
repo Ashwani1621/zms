@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 export const MapSection = () => {
   const [showModal, setShowModal] = useState(false)
   return (
-    <section className="flex flex-col items-center justify-center py-16 bg-gradient-to-br from-blue-50 via-gray-50 to-green-50 min-h-[60vh]">
+    <section id="map" className="flex flex-col items-center justify-center py-16 bg-gradient-to-br from-blue-50 via-gray-50 to-green-50 min-h-[60vh]">
       <h2 className="text-4xl font-extrabold text-blue-800 mb-3 drop-shadow">Zoo Map</h2>
       <p className="text-gray-700 mb-8 text-center max-w-xl text-lg">
         Explore the layout of our zoo and plan your visit!
