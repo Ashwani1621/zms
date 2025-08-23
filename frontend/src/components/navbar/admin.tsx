@@ -11,6 +11,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import { LogoutButton } from "@/components/auth/LogoutButton";
 
 export function NavbarAdminDemo() {
   const navItems = [
@@ -46,7 +47,7 @@ export function NavbarAdminDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" onClick={() => window.location.href = "/signup"} className="text-blue-600">Login</NavbarButton>
+            <LogoutButton />
             <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>Book a Ticket</NavbarButton>
           </div>
         </NavBody>
@@ -76,16 +77,7 @@ export function NavbarAdminDemo() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  window.location.href = "/signup";
-                }}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
+              <LogoutButton />
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
