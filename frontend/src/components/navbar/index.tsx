@@ -14,10 +14,10 @@ import { useState } from "react";
 
 export function NavbarDemo() {
   const navItems = [
-    {
-      name: "Staff",
-      link: "/staff",
-    },
+    // {
+    //   name: "Staff",
+    //   link: "/staff",
+    // },
     {
       name: "Animals",
       link: "/animals",
