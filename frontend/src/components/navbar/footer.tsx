@@ -1,8 +1,5 @@
 import React from "react";
-// import { FaInstagram } from "react-icons/fa";
-// import { FaTwitter } from "react-icons/fa";
-// import { FaLinkedin } from "react-icons/fa";
-// import { FaYoutube } from "react-icons/fa";
+
 import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconBrandYoutube, IconMail, IconMapPin, IconPhoneFilled } from '@tabler/icons-react'
 export function Footer() {
 	return (
@@ -80,12 +77,6 @@ export function Footer() {
 								zoo@banglorecorporation.org
 							</a>
 						</li>
-						{/* <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Downloads & Resources
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Videos
-						</li> */}
 					</ul>
 				</div>
 			</div>

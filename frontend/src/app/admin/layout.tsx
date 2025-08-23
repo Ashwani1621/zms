@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Cal_Sans, Geist, Geist_Mono } from "next/font/google";
-// import { NavbarDemo } from "@/components/navbar";
 import "./globals.css";
-// import { Navbar } from "@/components/ui/resizable-navbar";
-import { NavbarDemo } from "@/components/navbar";
 import { Footer } from "@/components/navbar/footer";
 import { StickyBannerDemo } from "@/components/stickyBanner/banner";
 import { NavbarAdminDemo } from "@/components/navbar/admin";
@@ -34,7 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StickyBannerDemo/>
-        {/* <NavbarDemo /> */}
         <NavbarAdminDemo />
         {children}
         <Footer />
