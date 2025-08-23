@@ -12,27 +12,27 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 
-export function NavbarDemo() {
+export function NavbarAdminDemo() {
   const navItems = [
-    // {
-    //   name: "Staff",
-    //   link: "/staff",
-    // },
+    {
+      name: "Staff",
+      link: "/admin/staff",
+    },
     {
       name: "Animals",
-      link: "/animals",
+      link: "/admin/animals",
     },
     {
       name: "Adopt",
-      link: "/adopt",
+      link: "/admin/adopt",
     },
     {
       name: "Map",
-      link: "/#map",
+      link: "/admin/#map",
     },
     {
       name: "About",
-      link: "/about",
+      link: "/admin/about",
     },
   ];
 

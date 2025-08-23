@@ -7,7 +7,7 @@ import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandX, Ico
 export function Footer() {
 	return (
 		<>
-			<div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
+			<div id="footer" className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
 				<div className="p-5 ">
 					<ul>
 						<p className="text-gray-800 font-bold text-3xl pb-6">

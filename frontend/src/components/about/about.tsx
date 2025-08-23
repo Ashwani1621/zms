@@ -10,15 +10,15 @@ export function TracingBeamDemo() {
       <div className="max-w-2xl mx-auto antialiased pt-4 relative">
         {dummyContent.map((item, index) => (
           <div key={`content-${index}`} className="mb-10">
-            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4 font-semibold">
               {item.badge}
             </h2>
 
-            <p className={twMerge(calsans.className, "text-xl mb-4")}>
+            <p className={twMerge(calsans.className, "text-xl mb-4 font-bold text-gray-900 dark:text-white tracking-tight")}>
               {item.title}
             </p>
 
-            <div className="text-sm  prose prose-sm dark:prose-invert">
+            <div className="text-sm  prose prose-lg dark:prose-invert text-gray-700 dark:text-gray-200 leading-relaxed">
               {item?.image && (
                 <img
                   src={item.image}
