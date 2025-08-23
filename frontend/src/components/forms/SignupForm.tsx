@@ -64,7 +64,6 @@ export function SignupForm() {
               text="Sign Up"
               loadingText="Loading"
             />
-            {/* <button className="w-full">Sign Up</button> */}
             </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">
