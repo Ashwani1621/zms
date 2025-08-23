@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Cal_Sans, Geist, Geist_Mono } from "next/font/google";
-// import { NavbarDemo } from "@/components/navbar";
-import "./global.css";
-// import { Navbar } from "@/components/ui/resizable-navbar";
+import "./globals.css";
 import { NavbarDemo } from "@/components/navbar";
 import { Footer } from "@/components/navbar/footer";
 import { StickyBannerDemo } from "@/components/stickyBanner/banner";
@@ -33,10 +31,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StickyBannerDemo/>
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-          <NavbarDemo />
-          {children}
-        </div>
+        <NavbarDemo />
+        {children}
         <Footer />
       </body>
     </html>

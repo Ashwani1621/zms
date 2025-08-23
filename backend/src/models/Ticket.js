@@ -8,7 +8,7 @@ const ticketSchema = new mongoose.Schema(
     ticketCount: { type: Number, required: true, min: 1 },
     timeSlot: { type: String, enum: ['Morning', 'Afternoon'], required: true },
     ticketId: { type: String, unique: true, required: true },
-    qrCode:  { type: String } // optional: base64/URL (add later if you like)
+    qrCode:  { type: String }
   },
   { timestamps: true }
 );

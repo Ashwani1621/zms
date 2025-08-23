@@ -1,13 +1,10 @@
 import React from "react";
-// import { FaInstagram } from "react-icons/fa";
-// import { FaTwitter } from "react-icons/fa";
-// import { FaLinkedin } from "react-icons/fa";
-// import { FaYoutube } from "react-icons/fa";
+
 import { IconBrandGithub, IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconBrandYoutube, IconMail, IconMapPin, IconPhoneFilled } from '@tabler/icons-react'
 export function Footer() {
 	return (
 		<>
-			<div className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
+			<div id="footer" className="bg-gray-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
 				<div className="p-5 ">
 					<ul>
 						<p className="text-gray-800 font-bold text-3xl pb-6">
@@ -80,12 +77,6 @@ export function Footer() {
 								zoo@banglorecorporation.org
 							</a>
 						</li>
-						{/* <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Downloads & Resources
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Videos
-						</li> */}
 					</ul>
 				</div>
 			</div>

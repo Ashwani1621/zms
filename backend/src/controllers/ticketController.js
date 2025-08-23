@@ -6,7 +6,7 @@ const { genTicketId } = require('../utils/id');
 exports.create = asyncHandler(async (req, res) => {
   const { visitorName, email, ticketCount, visitDate, timeSlot } = req.body;
 
-  console.log('Received request body:', req.body);
+  
 
   if (!visitorName || !email || !ticketCount || !visitDate || !timeSlot) {
     return res.status(400).json({ 

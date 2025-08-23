@@ -52,7 +52,6 @@ export function SigninForm() {
               text="Sign In"
               loadingText="Loading"
             />.
-            {/* <button className="w-full">Sing In</button> */}
             </CardFooter>
         </Card>
         <div className="mt-4 text-center text-sm">
