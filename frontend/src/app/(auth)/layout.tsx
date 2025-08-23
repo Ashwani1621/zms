@@ -6,6 +6,7 @@ import "./global.css";
 import { NavbarDemo } from "@/components/navbar";
 import { Footer } from "@/components/navbar/footer";
 import { StickyBannerDemo } from "@/components/stickyBanner/banner";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +33,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <StickyBannerDemo/>
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
-          <NavbarDemo />
-          {children}
-        </div>
-        <Footer />
+        <Providers>
+          <StickyBannerDemo/>
+          <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900">
+            <NavbarDemo />
+            {children}
+          </div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
