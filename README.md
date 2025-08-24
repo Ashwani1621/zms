@@ -3,18 +3,6 @@
 An open-source project for managing zoo operations, including animals, staff, and visitors.  
 This repository contains both **frontend** (React/Next.js) and **backend** (Node.js/Express + MongoDB) code in the file structure.  
 
----
-
-## Project Structure  
-
-zms/
-│── frontend/   # React/Next.js code for client-side
-│── backend/    # Express.js + MongoDB API server
-│── .env.example
-│── README.md
-
----
-
 ## Running Locally  
 
 > [!Note]
@@ -51,7 +39,7 @@ npm install
 npm run dev
 ```
 
-Backend usually runs on `http://localhost:4000` (check `.env` for actual port).  
+Backend usually runs on `http://localhost:5000` (check `.env` for actual port).  
 
 ---
 
@@ -83,9 +71,7 @@ Frontend runs on `http://localhost:3000`.
 - Visit `http://localhost:3000` in your browser.
 - Use these credentials to log in:
 
-- Email: `admin@gmail.com`, Password: `admin123`
-
-- Email: `user@gmail.com`, Password: `user123`
+- Email: `admin@zoo.com`, Password: `admin@123`
 
 ## 🤝 Contributing  
 
