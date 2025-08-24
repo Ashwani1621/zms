@@ -11,13 +11,12 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export function NavbarDemo() {
+  const pathname = usePathname();
+
   const navItems = [
-    // {
-    //   name: "Staff",
-    //   link: "/staff",
-    // },
     {
       name: "Animals",
       link: "/animals",
@@ -46,8 +45,15 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="secondary" onClick={() => window.location.href = "/signin"} className="text-blue-600">Login</NavbarButton>
-            <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>Book a Ticket</NavbarButton>
+            {/* Changed "Login" to "Admin" here */}
+            {pathname !== '/signin' && (
+              <NavbarButton variant="secondary" onClick={() => window.location.href = "/signin"} className="text-blue-600">
+                Admin
+              </NavbarButton>
+            )}
+            <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>
+              Book a Ticket
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -76,16 +82,19 @@ export function NavbarDemo() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  window.location.href = "/signin";
-                }}
-                variant="primary"
-                className="w-full"
-              >
-                Login
-              </NavbarButton>
+             
+              {pathname !== '/signin' && (
+                <NavbarButton
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    window.location.href = "/signin";
+                  }}
+                  variant="primary"
+                  className="w-full"
+                >
+                  Admin
+                </NavbarButton>
+              )}
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
@@ -97,8 +106,6 @@ export function NavbarDemo() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-
-      {/* Navbar */}
     </div>
   );
 }

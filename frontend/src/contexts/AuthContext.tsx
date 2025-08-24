@@ -1,7 +1,14 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getAuthToken, getUser, logout as apiLogout } from '@/lib/api';
+// Make sure your api file has functions to SET the token and user
+import { 
+    getAuthToken, 
+    getUser, 
+    setAuthToken, // Assumed to exist in your lib/api.ts
+    setUser as apiSetUser, // Assumed to exist in your lib/api.ts
+    logout as apiLogout 
+} from '@/lib/api';
 
 interface User {
   id: string;
@@ -27,7 +34,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check for stored auth data on mount
     const storedToken = getAuthToken();
     const storedUser = getUser();
 
@@ -39,9 +45,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(false);
   }, []);
 
+  
   const login = (newToken: string, newUser: User) => {
+    
     setToken(newToken);
     setUser(newUser);
+    
+    
+    setAuthToken(newToken); 
+    apiSetUser(newUser);
   };
 
   const logout = () => {

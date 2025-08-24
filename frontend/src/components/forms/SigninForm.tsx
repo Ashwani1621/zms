@@ -1,23 +1,20 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/contexts/AuthContext";
+
 
 import {
+  Card,
+  CardHeader,
   CardTitle,
   CardDescription,
-  CardHeader,
   CardContent,
   CardFooter,
-  Card,
 } from "@/components/ui/card";
-
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { SubmitButton } from "@/components/custom/SubmitButton";
-import { apiClient, setAuthToken, setUser } from "@/lib/api";
-import { useAuth } from "@/contexts/AuthContext";
 
 export function SigninForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,34 +38,38 @@ export function SigninForm() {
     }
 
     try {
-      const response = await apiClient.login({ email, password });
-      
-      // Store auth data
-      setAuthToken(response.token);
-      setUser(response.user);
-      login(response.token, response.user);
-      
-      // Redirect based on role
-      if (response.user.role === 'admin') {
-        router.push('/admin');
-      } else {
-        router.push('/');
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Login failed");
       }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
-      setIsLoading(false);
+
+      const data = await response.json();
+      
+      
+      login(data.token, data.user);
+      
+      
+      router.push('/admin');
+
+    } catch (err: any) {
+      setError(err.message);
+      setIsLoading(false); 
     }
   };
+
   return (
     <div className="w-full max-w-md">
       <form onSubmit={handleSubmit}>
         <Card>
-          <CardHeader className="space-y-1">
+          <CardHeader>
             <CardTitle className="text-3xl font-bold">Sign In</CardTitle>
-            <CardDescription>
-              Enter your details to sign in to your account
-            </CardDescription>
+            <CardDescription>Enter your details to sign in to your account</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             {error && (
@@ -78,41 +79,26 @@ export function SigninForm() {
             )}
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="email@example.com"
-                required
-              />
+              <Input id="email" name="email" type="email" placeholder="email@example.com" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                name="password"
-                type="password"
-                placeholder="password"
-                required
-              />
+              <Input id="password" name="password" type="password" placeholder="password" required />
             </div>
           </CardContent>
           <CardFooter className="flex flex-col">
-            <SubmitButton
-              className="w-full"
-              text="Sign In"
-              loadingText="Signing in..."
-              loading={isLoading}
-            />
-            </CardFooter>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full disabled:opacity-50"
+            >
+              {isLoading ? "Signing you in..." : "Sign In"}
+            </button>
+          </CardFooter>
         </Card>
-        <div className="mt-4 text-center text-sm">
-          Don't have an account?
-          <Link className="underline ml-2" href="signup">
-            Sign Up
-          </Link>
-        </div>
       </form>
     </div>
   );
 }
+
+export default SigninForm;
