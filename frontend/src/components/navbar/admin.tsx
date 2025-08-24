@@ -35,6 +35,10 @@ export function NavbarAdminDemo() {
       name: "About",
       link: "/admin/about",
     },
+    {
+      name: "Dashboard",
+      link: "/admin/dashboard",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
