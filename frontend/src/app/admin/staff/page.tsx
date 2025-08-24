@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function StaffPage() {
-  const router = useRouter(); // ✅ must call this
+  const router = useRouter(); 
 
   return (
     <div className="items-start h-full w-full px-5 py-20">

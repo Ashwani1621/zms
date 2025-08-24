@@ -5,7 +5,6 @@ import {
   NavItems,
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
@@ -31,10 +30,7 @@ export function NavbarAdminDemo() {
       name: "Map",
       link: "/admin#map",
     },
-    {
-      name: "About",
-      link: "/admin/about",
-    },
+   
     {
       name: "Dashboard",
       link: "/admin/dashboard",
@@ -46,59 +42,48 @@ export function NavbarAdminDemo() {
   return (
     <div className="relative w-full">
       <Navbar>
-        {/* Desktop Navigation */}
+        {/* --- DESKTOP NAVIGATION --- */}
         <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
-
+          <div className="flex flex-1 items-center gap-x-8 min-w-0">
+            <NavbarLogo />
+            <NavItems items={navItems} />
+          </div>
+          <div className="relative z-50 flex shrink-0 items-center">
             <LogoutButton />
-
-            <NavbarButton variant="primary" onClick={() => window.location.href = "/tickets"}>Book a Ticket</NavbarButton>
           </div>
         </NavBody>
 
-        {/* Mobile Navigation */}
+        {/* --- MOBILE NAVIGATION --- */}
         <MobileNav>
-          <MobileNavHeader>
-            <NavbarLogo />
-            <MobileNavToggle
+          <>
+            <MobileNavHeader>
+              <NavbarLogo />
+              <MobileNavToggle
+                isOpen={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              />
+            </MobileNavHeader>
+            <MobileNavMenu
               isOpen={isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
-          </MobileNavHeader>
-
-          <MobileNavMenu
-            isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
-          >
-            {navItems.map((item, idx) => (
-              <a
-                key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
-              >
-                <span className="block">{item.name}</span>
-              </a>
-            ))}
-            <div className="flex w-full flex-col gap-4">
-
-              <LogoutButton />
-
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a Ticket
-              </NavbarButton>
-            </div>
-          </MobileNavMenu>
+              onClose={() => setIsMobileMenuOpen(false)}
+            >
+              {navItems.map((item, idx) => (
+                <a
+                  key={`mobile-link-${idx}`}
+                  href={item.link}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="relative text-neutral-600 dark:text-neutral-300"
+                >
+                  <span className="block">{item.name}</span>
+                </a>
+              ))}
+              <div className="flex w-full flex-col gap-4">
+                <LogoutButton />
+              </div>
+            </MobileNavMenu>
+          </>
         </MobileNav>
       </Navbar>
-
-      {/* Navbar */}
     </div>
   );
 }

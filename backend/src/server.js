@@ -22,11 +22,11 @@ app.use('/api/staff', require('./routes/staffRoutes'));
 app.use('/api/tickets', require('./routes/ticketRoutes'));
 app.use('/api/events', require('./routes/eventRoutes'));
 app.use('/api/adoptions', require('./routes/adoptionRoutes'));
-app.use('/api/auth', require('./routes/authRoutes')); // simple admin auth
+app.use('/api/auth', require('./routes/authRoutes')); 
 
 // Errors
 app.use(notFound);
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 app.listen(PORT, () => console.log(`✅ Backend running on :${PORT}`));
