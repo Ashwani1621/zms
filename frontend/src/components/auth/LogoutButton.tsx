@@ -1,30 +1,27 @@
 "use client";
 
-import { useAuth } from '@/contexts/AuthContext';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useRouter } from "next/navigation";
 
 export function LogoutButton() {
-  const { logout, user } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+  const { logout } = useAuth();
   const router = useRouter();
 
   const handleLogout = () => {
+    setIsLoading(true);
     logout();
-    router.push('/');
+    router.push('/signin');
   };
 
-  if (!user) {
-    return null;
-  }
-
   return (
-    <div className="flex items-center gap-4">
-      {/* <span className="text-sm text-gray-600"> */}
-        {/* Welcome, {user.name} ({user.role}) */}
-      {/* </span> */}
-      <Button onClick={handleLogout} variant="outline" size="sm">
-        Logout
-      </Button>
-    </div>
+    <button
+      onClick={handleLogout}
+      disabled={isLoading}
+      className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 cursor-pointer disabled:opacity-50"
+    >
+      {isLoading ? "Logging you out..." : "Logout"}
+    </button>
   );
 }
