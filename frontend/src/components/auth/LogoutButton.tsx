@@ -19,9 +19,9 @@ export function LogoutButton() {
 
   return (
     <div className="flex items-center gap-4">
-      <span className="text-sm text-gray-600">
-        Welcome, {user.name} ({user.role})
-      </span>
+      {/* <span className="text-sm text-gray-600"> */}
+        {/* Welcome, {user.name} ({user.role}) */}
+      {/* </span> */}
       <Button onClick={handleLogout} variant="outline" size="sm">
         Logout
       </Button>
