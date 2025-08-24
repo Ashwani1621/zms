@@ -29,7 +29,7 @@ export function NavbarAdminDemo() {
     },
     {
       name: "Map",
-      link: "/admin/#map",
+      link: "/admin#map",
     },
     {
       name: "About",

@@ -1,9 +1,9 @@
+import { AddStaffDemo } from "@/components/add_staff/add_staff";
+
 export default function AddStaffPage() {
   return (
-    <div className="w-full py-20">
-        {/* <AnimatedTestimonialsDemo /> */}
-        Adding Staff in Page 
-        (Comming Soon)
+    <div className="min-h-screen p-20">
+      <AddStaffDemo />
     </div>
   )
 }

@@ -19,7 +19,7 @@ const pieData1 = {
   datasets: [
     {
       data: [50, 20],
-      backgroundColor: ["#1976D2", "#42A5F5"],
+      backgroundColor: ["#3E80D3", "#D3D3D3"],
       borderWidth: 0,
     },
   ],
@@ -31,8 +31,8 @@ const visitorBarData = {
   datasets: [
     {
       label: "Visitors",
-      data: [10, 15, 5, 12, 20, 28, 25],
-      backgroundColor: "#1976D2",
+      data: [69, 52, 76, 112, 87, 128, 119],
+      backgroundColor: "#FAFFFA",
       borderRadius: 4,
       barThickness: 22,
     },
@@ -44,8 +44,8 @@ const pieData2 = {
   labels: ["Admin", "Guide", "Veterinarian", "Zookeeper"],
   datasets: [
     {
-      data: [6, 4, 3, 9],
-      backgroundColor: ["#FFFFFF", "#D4D4D4", "#B3B3B3", "#2B2B2B"],
+      data: [2, 9, 8, 15],
+      backgroundColor: ["#FFFFFF", "#59B5F7", "#B3B3B3", "#8FBDEA"],
       borderWidth: 0,
     },
   ],
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
   return (
     <div className="dashboard-container">
   
-      <main className="main-content m-10">
+      <main className="main-content">
         <div className="charts-row">
           <div className="chart-card">
             <Pie data={pieData1} />
@@ -96,59 +96,13 @@ export default function AdminDashboard() {
 
       <style jsx>{`
         :global(body) {
-          background: #0b101e;
+          background: #FAFFFA;
         }
         .dashboard-container {
-          min-height: 100vh;
-          background: #0b101e;
+          // min-height: 100vh;
+          background: ##FAFFFA;
           color: #fff;
         }
-        // .navbar {
-        //   display: flex;
-        //   align-items: center;
-        //   justify-content: space-between;
-        //   background: #071220;
-        //   padding: 22px 44px 18px 44px;
-        //   box-shadow: 0 2px 16px rgba(25, 118, 210, 0.04);
-        // }
-        // .nav-left {
-        //   display: flex;
-        //   align-items: center;
-        //   gap: 26px;
-        // }
-        // .nav-title {
-        //   font-size: 1.37rem;
-        //   font-weight: bold;
-        //   color: #1976D2;
-        // }
-        // .nav-tabs {
-        //   display: flex;
-        //   gap: 16px;
-        //   margin-left: 46px;
-        // }
-        // .nav-tabs span {
-        //   color: #42A5F5;
-        //   font-size: 1.07rem;
-        //   cursor: pointer;
-        //   position: relative;
-        // }
-        // .nav-tabs span:hover {
-        //   color: #1976D2;
-        // }
-        // .nav-right {
-        //   display: flex;
-        //   gap: 12px;
-        // }
-        // .nav-btn {
-        //   background: #fff;
-        //   color: #1976D2;
-        //   border: none;
-        //   font-weight: bold;
-        //   border-radius: 7px;
-        //   padding: 7px 22px;
-        //   font-size: 1rem;
-        //   cursor: pointer;
-        // }
         .primary-btn {
           background: #1976D2;
           color: #fff;
@@ -163,7 +117,7 @@ export default function AdminDashboard() {
           justify-content: flex-start;
         }
         .chart-card {
-          background: #151b2b;
+          background: #182E6F;
           padding: 22px 26px;
           border-radius: 16px;
           box-shadow: 0 2px 18px rgba(25, 118, 210, 0.06);
@@ -184,7 +138,7 @@ export default function AdminDashboard() {
           flex-wrap: wrap;
         }
         .stat-card {
-          background: #151b2b;
+          background: #182E6F;
           border-radius: 12px;
           padding: 18px 38px;
           min-width: 190px;
