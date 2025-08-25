@@ -4,7 +4,8 @@ const staffSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     role: { type: String, required: true },
-    assignedAnimal: { type: mongoose.Schema.Types.ObjectId, ref: 'Animal' }
+    assignedAnimal: { type: mongoose.Schema.Types.ObjectId, ref: 'Animal' },
+    staffPhoto: { type: String }, 
   },
   { timestamps: true }
 );
